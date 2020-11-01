@@ -1,25 +1,42 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "baseUrl": "tmp-src",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
-    "experimentalDecorators": true,
+    "module": "esnext",
     "moduleResolution": "node",
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
-    "module": "es2020",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "lib": [
       "es2018",
       "dom"
     ],
     "paths": {
-      "ng-modal-lib": [
-        "dist/ng-modal-lib/ng-modal-lib",
-        "dist/ng-modal-lib"
+      "components": [
+        "../browser"
       ]
     }
+  },
+  "exclude": [
+    ".ng_build",
+    "node_modules",
+    "dist",
+    "module*",
+    "src"
+  ],
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": false,
+    "strictInjectionParameters": true,
+    "disableTypeScriptVersionCheck": true,
+    "skipTemplateCodegen": true,
+    "enableIvy": false
   }
 }

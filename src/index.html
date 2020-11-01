@@ -2,15 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Demo modal</title>
-  <base href="">
+  <title>Ng 2 Modal</title>
+  <base href="/">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1976d2">
 </head>
 <body>
-  <app-root></app-root>
+  <script>
+    if (global === undefined) {
+      var global = window;
+    }
+    var ENV = {"domain":"ng2-modal.example.domain.com","name":"local","isCoreProject":false,"ip":"localhost","packageJSON":{"tnp":{"resources":[],"type":"angular-lib","version":"v2","overrided":{"linkedFolders":[],"ignoreDepsPattern":["*"],"includeAsDev":[],"includeOnly":[],"dependencies":{}},"linkedProjects":[],"libReleaseOptions":{"nodts":false,"obscure":false,"ugly":false}},"name":"ng2-modal","version":"0.0.0","scripts":{"ng":"ng","start":"ng serve","build":"ng build","test":"ng test","lint":"ng lint","e2e":"ng e2e","lib:build":"ng build ng-modal-lib --prod","lib:watch":"ng build ng-modal-lib --watch","lib:publish":"cd dist/ng-modal-lib && npm publish"},"private":true,"dependencies":{"@angular/animations":"~10.0.6","@angular/common":"~10.0.6","@angular/compiler":"~10.0.6","@angular/core":"~10.0.6","@angular/forms":"~10.0.6","@angular/platform-browser":"~10.0.6","@angular/platform-browser-dynamic":"~10.0.6","@angular/router":"~10.0.6","rxjs":"~6.5.5","tslib":"^2.0.0","zone.js":"~0.10.3"},"devDependencies":{"@angular-devkit/build-angular":"~0.1000.5","@angular-devkit/build-ng-packagr":"~0.1000.5","@angular/cli":"~10.0.5","@angular/compiler-cli":"~10.0.6","@types/node":"^12.11.1","@types/jasmine":"~3.5.0","@types/jasminewd2":"~2.0.3","codelyzer":"^6.0.0","jasmine-core":"~3.5.0","jasmine-spec-reporter":"~5.0.0","karma":"~5.0.0","karma-chrome-launcher":"~3.1.0","karma-coverage-istanbul-reporter":"~3.0.2","karma-jasmine":"~3.3.0","karma-jasmine-html-reporter":"^1.5.0","ng-packagr":"^10.0.0","protractor":"~7.0.0","ts-node":"~8.3.0","tslint":"~6.1.0","typescript":"~3.9.5"}},"build":{"number":43,"date":"2020-08-09T10:33:15.000Z","hash":"7a02dae1c7cc7e03fd53aae6f655c017b9e1609b","options":{}},"currentProjectName":"ng2-modal","currentProjectPort":4250,"currentProjectLaunchConfiguration":"{\"version\":\"0.2.0\",\"configurations\":[{\"name\":\"Debugger with ng serve\",\"type\":\"chrome\",\"request\":\"launch\",\"preLaunchTask\":\"Ng Serve\",\"postDebugTask\":\"terminateall\",\"sourceMaps\":true,\"webRoot\":\"${workspaceFolder}\",\"sourceMapPathOverrides\":{\"webpack:/*\":\"${webRoot}/*\",\"/./*\":\"${webRoot}/*\",\"/tmp-src/*\":\"${webRoot}/*\",\"/*\":\"*\",\"/./~/*\":\"${webRoot}/node_modules/*\"}}],\"compounds\":[]}","currentProjectTasksConfiguration":"{\"version\":\"2.0.0\",\"tasks\":[{\"label\":\"terminateall\",\"command\":\"echo ${input:terminate}\",\"type\":\"shell\",\"problemMatcher\":[]},{\"label\":\"Ng Serve\",\"type\":\"shell\",\"command\":\"tnp build\",\"isBackground\":true,\"presentation\":{\"reveal\":\"always\"},\"group\":{\"kind\":\"build\",\"isDefault\":true},\"problemMatcher\":{\"owner\":\"typescript\",\"source\":\"ts\",\"applyTo\":\"closedDocuments\",\"fileLocation\":[\"relative\",\"${cwd}\"],\"pattern\":\"$tsc\",\"background\":{\"activeOnStart\":true,\"beginsPattern\":{\"regexp\":\"(.*?)\"},\"endsPattern\":{\"regexp\":\"Compiled |Failed to compile.\"}}}}],\"inputs\":[{\"id\":\"terminate\",\"type\":\"command\",\"command\":\"workbench.action.tasks.terminate\",\"args\":\"terminateAll\"}]}","currentProjectType":"angular-lib","currentFrameworkVersion":"0.0.66","currentProjectLocation":"/Users/dfilipiak/projects/npm/ng2-modal","currentProjectIsStrictSite":false,"currentProjectIsDependencySite":false,"currentProjectIsStatic":false,"isStandaloneProject":true,"frameworks":["bootstrap","ionic","material"],"currentProjectComponentsFolder":"browser","currentLibProjectSourceFolder":"components"};
+    window.ENV = ENV;
+    global.ENV = ENV;
+  </script>
+  <app-root>Loading...</app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 </html>

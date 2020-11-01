@@ -1,35 +1,6 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# compiled output
-/dist
-/tmp
-/out-tsc
-# Only exists if Bazel was run
-/bazel-out
-
-# dependencies
-/node_modules
-
 # profiling files
-chrome-profiler-events.json
-speed-measure-plugin.json
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+chrome-profiler-events*.json
+speed-measure-plugin*.json
 
 # misc
 /.sass-cache
@@ -44,4 +15,66 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-package-lock.json
+/node_modules
+/tmp*
+/dist*
+/bundle*
+/browser
+/browser*
+/module*
+/backup
+/module
+/www
+/Thumbs.db
+/.DS_Store
+/**/.DS_Store
+/npm-debug.log*
+/.sass-cache
+/.sourcemaps
+/tsconfig.isomorphic.json
+/tsconfig.json
+/src/tsconfig.app.json
+/.vscode/launch.json
+/.vscode/tasks.json
+/angular.json
+/browserslist
+/ngsw-config.json
+/tsconfig.app.json
+/tsconfig.base.json
+/src/index.html
+/src/manifest.webmanifest
+/tsconfig.browser.json
+/tsconfig.isomorphic.json
+/components/tsconfig.json
+/src/tsconfig.app.json
+/.npmrc
+/tslint.json
+/.editorconfig
+/index.js
+/index.d.ts
+/index.js.map
+/tsconfig.browser.json
+/karma.conf.js.filetemplate
+/tsconfig.isomorphic.json.filetemplate
+/tsconfig.json.filetemplate
+/.vscode/launch.json.filetemplate
+/.vscode/tasks.json.filetemplate
+/angular.json.filetemplate
+/browserslist.filetemplate
+/ngsw-config.json.filetemplate
+/tsconfig.app.json.filetemplate
+/tsconfig.base.json.filetemplate
+/src/index.html.filetemplate
+/src/manifest.webmanifest.filetemplate
+/tsconfig.browser.json.filetemplate
+/tsconfig.isomorphic.json.filetemplate
+/src/main.ts
+/src/polyfills.ts
+/protractor.conf.js
+/karma.conf.js
+
+
+
+
+# =====================
+*.filetemplate

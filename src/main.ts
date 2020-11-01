@@ -1,10 +1,14 @@
+import 'hammerjs';
+
+declare var ENV: any;
+
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+console.log(ENV)
 
-if (environment.production) {
+if (!ENV.build.options.isWatchBuild) {
   enableProdMode();
 }
 
