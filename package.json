@@ -19,8 +19,8 @@
       "ugly": false
     }
   },
-  "name": "ng2-modal",
-  "version": "0.0.3",
+  "name": "ng4-modal",
+  "version": "0.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
