@@ -1,8 +1,13 @@
 import {
-  Component, ElementRef, ViewChild, Input, Output, AfterViewChecked, HostListener, EventEmitter, ViewEncapsulation
+  Component, ElementRef, ViewChild, Input, Output, AfterViewChecked, HostListener, EventEmitter, ViewEncapsulation, AfterViewInit
 } from '@angular/core';
-import {ResizableEvent} from '../resizable/types';
-import {maxZIndex, findAncestor} from '../common/utils';
+import { ResizableEvent } from '../resizable/types';
+import { maxZIndex, findAncestor } from '../common/utils';
+import { Log, Level } from 'ng2-logger';
+const log = Log.create(`[ng4-modal] modal.component`
+  // , Level.__NOTHING
+);
+import { ConfigModels } from 'tnp-config';
 
 @Component({
   selector: 'app-modal',
@@ -10,20 +15,23 @@ import {maxZIndex, findAncestor} from '../common/utils';
   styleUrls: ['modal.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
-export class ModalComponent implements AfterViewChecked {
+export class ModalComponent implements AfterViewChecked, AfterViewInit {
 
   @Input() scrollTopEnable: boolean = true;
   @Input() maximizable: boolean;
   @Input() backdrop: boolean = true;
-  @Input() inViewport: boolean;
-
+  @Input() inViewport: boolean = false;
+  @Input() initialPos: ConfigModels.Position;
+  @Input() initialSize: ConfigModels.Size;
   @Output() closeModal: EventEmitter<boolean> = new EventEmitter();
+  @Output() newPosition: EventEmitter<ConfigModels.Position> = new EventEmitter();
+  @Output() newSize: EventEmitter<ConfigModels.Size> = new EventEmitter();
 
-  @ViewChild('modalRoot', {static: false}) modalRoot: ElementRef;
-  @ViewChild('modalBody', {static: false}) modalBody: ElementRef;
-  @ViewChild('modalHeader', {static: false}) modalHeader: ElementRef;
-  @ViewChild('modalFooter', {static: false}) modalFooter: ElementRef;
-  @ViewChild('closeIcon', {static: false}) closeIcon: ElementRef;
+  @ViewChild('modalRoot', { static: false }) modalRoot: ElementRef;
+  @ViewChild('modalBody', { static: false }) modalBody: ElementRef;
+  @ViewChild('modalHeader', { static: false }) modalHeader: ElementRef;
+  @ViewChild('modalFooter', { static: false }) modalFooter: ElementRef;
+  @ViewChild('closeIcon', { static: false }) closeIcon: ElementRef;
 
   visible: boolean;
   executePostDisplayActions: boolean;
@@ -35,13 +43,36 @@ export class ModalComponent implements AfterViewChecked {
   preMaximizePageY: number;
   dragEventTarget: MouseEvent | TouchEvent;
 
-  constructor(private element: ElementRef) {}
+  constructor(private element: ElementRef) {
+    // log2.w('warn')
+    // log2.d('debug')
+    // log2.er('error')
+    // log2.i('info')
+  }
 
   ngAfterViewChecked() {
     if (this.executePostDisplayActions) {
       this.center();
       this.executePostDisplayActions = false;
     }
+  }
+
+  dragEnd() {
+    const x = Number((this.modalRoot.nativeElement as HTMLElement).style.left.replace('px', ''));
+    const y = Number((this.modalRoot.nativeElement as HTMLElement).style.top.replace('px', ''));
+    this.newPosition.next({ x, y });
+    log.d(`drag end new pos: ${x},${y}`)
+  }
+
+  resizeEnd() {
+    const w = Number((this.modalRoot.nativeElement as HTMLElement).style.width.replace('px', ''));
+    const h = Number((this.modalRoot.nativeElement as HTMLElement).style.height.replace('px', ''));
+    this.newSize.next({ w, h });
+    log.d(`resize end new size ${w}/${h}`)
+  }
+
+  ngAfterViewInit() {
+    log.i(`inital pos`, this.initialPos);
   }
 
   @HostListener('keydown.esc', ['$event'])
@@ -65,6 +96,17 @@ export class ModalComponent implements AfterViewChecked {
       if (this.scrollTopEnable) {
         this.modalBody.nativeElement.scrollTop = 0;
       }
+      const { x, y } = this.initialPos;
+      (this.modalRoot.nativeElement as HTMLElement).style.left = `${x}.px`;
+      (this.modalRoot.nativeElement as HTMLElement).style.top = `${y}.px`;
+      this.newPosition.next({ x, y });
+      log.d(`after view init new pos: ${x},${y}`);
+
+      const { h, w } = this.initialSize;
+      (this.modalRoot.nativeElement as HTMLElement).style.width = `${w}.px`;
+      (this.modalRoot.nativeElement as HTMLElement).style.height = `${h}.px`;
+      this.newSize.next({ w, h });
+      log.d(`after view init new size: w:${w} h:${h}`);
     }, 1);
   }
 
@@ -155,13 +197,13 @@ export class ModalComponent implements AfterViewChecked {
   }
 
   revertMaximize() {
-      this.modalRoot.nativeElement.style.top = this.preMaximizePageX + 'px';
-      this.modalRoot.nativeElement.style.left = this.preMaximizePageY + 'px';
-      this.modalRoot.nativeElement.style.width = this.preMaximizeRootWidth + 'px';
-      this.modalRoot.nativeElement.style.height = this.preMaximizeRootHeight + 'px';
-      this.modalBody.nativeElement.style.height = this.preMaximizeBodyHeight + 'px';
+    this.modalRoot.nativeElement.style.top = this.preMaximizePageX + 'px';
+    this.modalRoot.nativeElement.style.left = this.preMaximizePageY + 'px';
+    this.modalRoot.nativeElement.style.width = this.preMaximizeRootWidth + 'px';
+    this.modalRoot.nativeElement.style.height = this.preMaximizeRootHeight + 'px';
+    this.modalBody.nativeElement.style.height = this.preMaximizeBodyHeight + 'px';
 
-      this.maximized = false;
+    this.maximized = false;
   }
 
   moveOnTop() {

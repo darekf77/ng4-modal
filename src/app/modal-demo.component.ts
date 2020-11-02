@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
     <app-modal #modalRoot
                [maximizable]="true"
                [inViewport]="true"
+               [initialPos]="{ x: 100, y: 100 }"
+               [initialSize]="{ w: 500, h: 500 }"
+               (newPosition)="newPosition($event)"
+               (newSize)="newSize($event)"
                (closeModal)="onCloseModal()">
       <ng-container class="app-modal-header">Demo modal</ng-container>
       <ng-container class="app-modal-body">
@@ -24,6 +28,15 @@ import { Component } from '@angular/core';
 })
 export class ModalDemoComponent {
 
-  onCloseModal() {}
+  onCloseModal() { }
+
+  newPosition(a) {
+    console.log(a)
+  }
+
+  newSize(a) {
+    console.log(a)
+  }
 
 }
+

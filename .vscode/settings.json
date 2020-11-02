@@ -60,8 +60,8 @@
     "logo.svg": true
   },
   "workbench.colorCustomizations": {
-    "activityBar.background": "#d11ab3",
-    "activityBar.foreground": "#313129"
+    "activityBar.background": "#5bb0e9",
+    "activityBar.foreground": "#313129",
   },
   "editor.rulers": [
     100,
