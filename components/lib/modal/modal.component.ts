@@ -5,7 +5,7 @@ import { ResizableEvent } from '../resizable/types';
 import { maxZIndex, findAncestor } from '../common/utils';
 import { Log, Level } from 'ng2-logger';
 const log = Log.create(`[ng4-modal] modal.component`
-  // , Level.__NOTHING
+  , Level.__NOTHING
 );
 import { ConfigModels } from 'tnp-config';
 
@@ -96,17 +96,22 @@ export class ModalComponent implements AfterViewChecked, AfterViewInit {
       if (this.scrollTopEnable) {
         this.modalBody.nativeElement.scrollTop = 0;
       }
-      const { x, y } = this.initialPos;
-      (this.modalRoot.nativeElement as HTMLElement).style.left = `${x}.px`;
-      (this.modalRoot.nativeElement as HTMLElement).style.top = `${y}.px`;
-      this.newPosition.next({ x, y });
-      log.d(`after view init new pos: ${x},${y}`);
+      if (this.initialPos) {
+        const { x, y } = this.initialPos;
+        (this.modalRoot.nativeElement as HTMLElement).style.left = `${x}.px`;
+        (this.modalRoot.nativeElement as HTMLElement).style.top = `${y}.px`;
+        this.newPosition.next({ x, y });
+        log.d(`after view init new pos: ${x},${y}`);
+      }
 
-      const { h, w } = this.initialSize;
-      (this.modalRoot.nativeElement as HTMLElement).style.width = `${w}.px`;
-      (this.modalRoot.nativeElement as HTMLElement).style.height = `${h}.px`;
-      this.newSize.next({ w, h });
-      log.d(`after view init new size: w:${w} h:${h}`);
+      if (this.initialSize) {
+        const { h, w } = this.initialSize;
+        (this.modalRoot.nativeElement as HTMLElement).style.width = `${w}.px`;
+        (this.modalRoot.nativeElement as HTMLElement).style.height = `${h}.px`;
+        this.newSize.next({ w, h });
+        log.d(`after view init new size: w:${w} h:${h}`);
+      }
+
     }, 1);
   }
 
