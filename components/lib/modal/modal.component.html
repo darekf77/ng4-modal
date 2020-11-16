@@ -1,6 +1,9 @@
-<div class="ui-modal-overlay" [style.display]="(visible && backdrop) ? 'block' : 'none'"></div>
+<div class="ui-modal-overlay"
+     [style.display]="(visible && backdrop) ? 'block' : 'none'"></div>
 
-<div class="ui-modal" tabindex="-1" role="dialog"
+<div class="ui-modal"
+     tabindex="-1"
+     role="dialog"
      #modalRoot
      appResizable
      [south]="true"
@@ -15,27 +18,30 @@
      [style.display]="visible ? 'block' : 'none'"
      (mousedown)="moveOnTop()"
      (touchstart)="moveOnTop()">
-    <div class="ui-modal-header" #modalHeader
-         (mousedown)="initDrag($event)"
-         (touchstart)="initDrag($event)">
-      <div class="ui-titlebar">
-          <ng-content select=".app-modal-header"></ng-content>
-      </div>
-      <div class="ui-controlbar">
-          <i class="ui-icon"
-             *ngIf="maximizable"
-             (click)="toggleMaximize($event)"
-             [ngClass]="{'dt-icon-maximize': !maximized, 'dt-icon-normalize': maximized}">
-          </i>
-          <i class="ui-icon dt-icon-close" #closeIcon (click)="hide()">
-          </i>
-      </div>
+  <div class="ui-modal-header"
+       #modalHeader
+       (mousedown)="initDrag($event)"
+       (touchstart)="initDrag($event)">
+    <div class="ui-titlebar">
+      <ng-content select=".app-modal-header"></ng-content>
     </div>
+    <div class="ui-controlbar">
+      <ng4-icons [path]="maximizeRestpreIcon"
+                 *ngIf="maximizable"
+                 (click)="toggleMaximize($event)"></ng4-icons>
+      <ng4-icons [path]="mdiWindowClose"
+                 #closeIcon
+                 (click)="hide()">
+      </ng4-icons>
+    </div>
+  </div>
 
-    <div class="ui-modal-body" #modalBody>
-      <ng-content select=".app-modal-body"></ng-content>
-    </div>
-    <div class="ui-modal-footer" #modalFooter>
-      <ng-content select=".app-modal-footer"></ng-content>
-    </div>
+  <div class="ui-modal-body"
+       #modalBody>
+    <ng-content select=".app-modal-body"></ng-content>
+  </div>
+  <div class="ui-modal-footer"
+       #modalFooter>
+    <ng-content select=".app-modal-footer"></ng-content>
+  </div>
 </div>

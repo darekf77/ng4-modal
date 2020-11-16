@@ -8,6 +8,9 @@ const log = Log.create(`[ng4-modal] modal.component`
   , Level.__NOTHING
 );
 import { ConfigModels } from 'tnp-config';
+import { mdiWindowMaximize } from '@mdi/js';
+import { mdiWindowRestore } from '@mdi/js';
+import { mdiWindowClose } from '@mdi/js';
 
 @Component({
   selector: 'app-modal',
@@ -16,7 +19,12 @@ import { ConfigModels } from 'tnp-config';
   encapsulation: ViewEncapsulation.None,
 })
 export class ModalComponent implements AfterViewChecked, AfterViewInit {
-
+  mdiWindowMaximize = mdiWindowMaximize;
+  mdiWindowRestore = mdiWindowRestore;
+  mdiWindowClose = mdiWindowClose;
+  get maximizeRestpreIcon() {
+    return this.maximized ? this.mdiWindowRestore : this.mdiWindowMaximize;
+  }
   @Input() scrollTopEnable: boolean = true;
   @Input() maximizable: boolean;
   @Input() backdrop: boolean = true;
