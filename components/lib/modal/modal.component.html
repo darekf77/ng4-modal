@@ -26,6 +26,7 @@
       <ng-content select=".app-modal-header"></ng-content>
     </div>
     <div class="ui-controlbar">
+      <ng-content select=".app-modal-controlbar"></ng-content>
       <ng4-icons [path]="maximizeRestpreIcon"
                  *ngIf="maximizable"
                  (click)="toggleMaximize($event)"></ng4-icons>

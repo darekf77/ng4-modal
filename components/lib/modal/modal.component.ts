@@ -119,7 +119,7 @@ export class ModalComponent implements AfterViewChecked, AfterViewInit {
         this.newSize.next({ w, h });
         log.d(`after view init new size: w:${w} h:${h}`);
       }
-
+      this.calcBodyHeight();
     }, 1);
   }
 
