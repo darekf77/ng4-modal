@@ -47,7 +47,7 @@
 .ui-modal-body {
   position: relative;
   padding: .625rem 1rem;
-  max-height: calc(100vh - 12.5rem);
+  /* max-height: calc(100vh - 12.5rem); */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
