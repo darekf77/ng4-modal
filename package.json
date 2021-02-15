@@ -211,7 +211,7 @@
     "ng2-file-upload": "^1.3.0",
     "ng2-rest": "~11.0.11",
     "ng4-icons": "~0.0.10",
-    "ng4-modal": "~0.0.13",
+    "ng4-modal": "~0.0.14",
     "ngx-bootstrap": "^5.2.0",
     "ngx-breadcrumbs": "0.0.3",
     "ngx-editor": "^4.1.0",
@@ -279,5 +279,6 @@
     "webpack-cli": "3.3.11",
     "zone.js": "~0.10.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "lastBuildTagHash": "0ed14d7dd12f4b1a984cdfa2cbea1eee9ba8c417"
 }
