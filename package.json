@@ -213,7 +213,7 @@
     "ng2-file-upload": "1.3.0",
     "ng2-rest": "~11.0.24",
     "ng4-icons": "~0.0.19",
-    "ng4-modal": "~0.0.19",
+    "ng4-modal": "~0.0.20",
     "ngx-bootstrap": "5.2.0",
     "ngx-breadcrumbs": "0.0.3",
     "ngx-editor": "4.1.0",
@@ -288,5 +288,5 @@
     "zone.js": "0.10.2"
   },
   "license": "MIT",
-  "lastBuildTagHash": "f1975e862e1874190dfb89cd7e132cd2b73d5467"
+  "lastBuildTagHash": "723e52ae4ca6be85e857be307d2962d3386972ab"
 }
