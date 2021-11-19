@@ -34,5 +34,6 @@
     "lib:publish": "cd dist/ng-modal-lib && npm publish"
   },
   "license": "MIT",
-  "private": false
+  "private": false,
+  "workerPlugins": {}
 }

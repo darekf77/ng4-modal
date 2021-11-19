@@ -35,7 +35,8 @@
       "lib:publish": "cd dist/ng-modal-lib && npm publish"
     },
     "license": "MIT",
-    "private": false
+    "private": false,
+    "workerPlugins": {}
   },
   "name": "ng4-modal",
   "version": "0.0.30",
@@ -209,7 +210,7 @@
     "ng2-file-upload": "1.3.0",
     "ng2-rest": "~11.0.42",
     "ng4-icons": "~0.0.30",
-    "ng4-modal": "~0.0.30",
+    "ng4-modal": "~0.0.29",
     "ngx-bootstrap": "5.2.0",
     "ngx-breadcrumbs": "0.0.3",
     "ngx-editor": "4.1.0",
