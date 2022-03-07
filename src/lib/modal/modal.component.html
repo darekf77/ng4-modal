@@ -10,9 +10,9 @@
      [east]="true"
      [southEast]="true"
      (resizing)="onResize($event)"
-     (resizeEnd)="resizeEnd($event)"
+     (resizeEnd)="resizeEnd()"
      appDraggable
-     (dragEnd)="dragEnd($event)"
+     (dragEnd)="dragEnd()"
      [dragEventTarget]="dragEventTarget"
      [inViewport]="inViewport"
      [style.display]="visible ? 'block' : 'none'"

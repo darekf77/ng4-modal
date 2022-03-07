@@ -68,6 +68,7 @@ export class ModalComponent implements AfterViewChecked, AfterViewInit {
   dragEnd() {
     const x = Number((this.modalRoot.nativeElement as HTMLElement).style.left.replace('px', ''));
     const y = Number((this.modalRoot.nativeElement as HTMLElement).style.top.replace('px', ''));
+    // @ts-ignore
     this.newPosition.next({ x, y });
     log.d(`drag end new pos: ${x},${y}`)
   }
@@ -75,6 +76,7 @@ export class ModalComponent implements AfterViewChecked, AfterViewInit {
   resizeEnd() {
     const w = Number((this.modalRoot.nativeElement as HTMLElement).style.width.replace('px', ''));
     const h = Number((this.modalRoot.nativeElement as HTMLElement).style.height.replace('px', ''));
+    // @ts-ignore
     this.newSize.next({ w, h });
     log.d(`resize end new size ${w}/${h}`)
   }
@@ -108,6 +110,7 @@ export class ModalComponent implements AfterViewChecked, AfterViewInit {
         const { x, y } = this.initialPos;
         (this.modalRoot.nativeElement as HTMLElement).style.left = `${x}.px`;
         (this.modalRoot.nativeElement as HTMLElement).style.top = `${y}.px`;
+        // @ts-ignore
         this.newPosition.next({ x, y });
         log.d(`after view init new pos: ${x},${y}`);
       }
@@ -116,6 +119,7 @@ export class ModalComponent implements AfterViewChecked, AfterViewInit {
         const { h, w } = this.initialSize;
         (this.modalRoot.nativeElement as HTMLElement).style.width = `${w}.px`;
         (this.modalRoot.nativeElement as HTMLElement).style.height = `${h}.px`;
+        // @ts-ignore
         this.newSize.next({ w, h });
         log.d(`after view init new size: w:${w} h:${h}`);
       }
