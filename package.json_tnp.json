@@ -1,7 +1,10 @@
 {
   "resources": [],
-  "type": "angular-lib",
-  "version": "v2",
+  "type": "isomorphic-lib",
+  "version": "v3",
+  "additionalNpmNames": [
+    "firedev-modal"
+  ],
   "overrided": {
     "linkedFolders": [],
     "ignoreDepsPattern": [
@@ -22,17 +25,7 @@
     "obscure": false,
     "ugly": false
   },
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "lib:build": "ng build ng-modal-lib --prod",
-    "lib:watch": "ng build ng-modal-lib --watch",
-    "lib:publish": "cd dist/ng-modal-lib && npm publish"
-  },
+  "scripts": {},
   "license": "MIT",
   "private": false,
   "workerPlugins": {}
