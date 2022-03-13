@@ -1,4 +1,36 @@
 {
+  "tnp": {
+    "resources": [],
+    "overrided": {
+      "linkedFolders": [],
+      "ignoreDepsPattern": [
+        "*"
+      ],
+      "includeAsDev": [],
+      "includeOnly": [
+        "tnp-config",
+        "ng2-logger",
+        "@angular/core",
+        "rxjs"
+      ],
+      "dependencies": {}
+    },
+    "linkedProjects": [],
+    "libReleaseOptions": {
+      "nodts": false,
+      "obscure": false,
+      "ugly": false
+    },
+    "type": "isomorphic-lib",
+    "version": "v3",
+    "additionalNpmNames": [
+      "firedev-modal"
+    ],
+    "scripts": {},
+    "license": "MIT",
+    "private": false,
+    "workerPlugins": {}
+  },
   "name": "ng4-modal",
   "version": "13.0.5",
   "scripts": {},
@@ -10,5 +42,6 @@
     "tnp-config": "~13.0.1"
   },
   "license": "MIT",
-  "lastBuildTagHash": "e3d6181e0b1f06e931409803a95bf7a3f0e08d5e"
+  "lastBuildTagHash": "e3d6181e0b1f06e931409803a95bf7a3f0e08d5e",
+  "devDependencies": {}
 }
