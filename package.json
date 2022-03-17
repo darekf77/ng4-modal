@@ -10,5 +10,6 @@
     "tnp-config": "~13.0.7"
   },
   "license": "MIT",
-  "lastBuildTagHash": "e3d6181e0b1f06e931409803a95bf7a3f0e08d5e"
+  "lastBuildTagHash": "e3d6181e0b1f06e931409803a95bf7a3f0e08d5e",
+  "devDependencies": {}
 }
