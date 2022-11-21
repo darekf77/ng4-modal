@@ -10,7 +10,7 @@
     "tnp-config": "~13.1.37"
   },
   "license": "MIT",
-  "lastBuildTagHash": "1d7c4e49adc928437b574950ea854505d779d802",
+  "lastBuildTagHash": "2263da2bdf837ff11ac2c3549ebc6f9cbc5eef7f",
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.9",
     "@angular-devkit/core": "~13.3.9",
@@ -176,7 +176,7 @@
     "ng-talkback": "~13.1.16",
     "ng2-rest": "~13.1.2",
     "ng4-icons": "~13.1.18",
-    "ng4-modal": "~13.0.19",
+    "ng4-modal": "~13.1.20",
     "ngx-bootstrap": "8.0.0",
     "ngx-editor": "12.2.1",
     "ngx-moment": "6.0.2",
