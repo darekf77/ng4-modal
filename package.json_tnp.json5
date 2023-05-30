@@ -3,17 +3,22 @@
 
   "overrided": {
     "linkedFolders": [],
+
     "ignoreDepsPattern": [
       "*"
     ],
+
     "includeAsDev": [],
+
     "includeOnly": [
       "tnp-config",
       "ng2-logger",
       "@angular/core",
       "rxjs"
     ],
-    "dependencies": {}
+
+    "dependencies": {},
+    'npmFixes': [],
   },
 
   "linkedProjects": [],
