@@ -1,4 +1,41 @@
 {
+  "tnp": {
+    "resources": [],
+    "overrided": {
+      "linkedFolders": [],
+      "ignoreDepsPattern": [
+        "*"
+      ],
+      "includeAsDev": [],
+      "includeOnly": [
+        "tnp-config",
+        "ng2-logger",
+        "@angular/core",
+        "rxjs"
+      ],
+      "dependencies": {},
+      "npmFixes": []
+    },
+    "linkedProjects": [],
+    "smartContainerBuildTarget": "",
+    "linkedRepos": [],
+    "libReleaseOptions": {
+      "nodts": false,
+      "obscure": false,
+      "ugly": false,
+      "includeNodeModules": false
+    },
+    "smartContainerTarget": "",
+    "type": "isomorphic-lib",
+    "version": "v3",
+    "additionalNpmNames": [
+      "firedev-modal"
+    ],
+    "scripts": {},
+    "license": "MIT",
+    "private": false,
+    "workerPlugins": {}
+  },
   "name": "ng4-modal",
   "version": "13.1.23",
   "scripts": {},
