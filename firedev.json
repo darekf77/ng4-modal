@@ -1,0 +1,27 @@
+{
+  "resources": [],
+  "overrided": {
+    "linkedFolders": [],
+    "ignoreDepsPattern": [],
+    "npmFixes": [],
+    "includeAsDev": [],
+    "includeOnly": [],
+    "dependencies": {}
+  },
+  "smartContainerBuildTarget": "",
+  "linkedRepos": [],
+  "libReleaseOptions": {
+    "cliBuildNoDts": false,
+    "cliBuildObscure": false,
+    "cliBuildUglify": false,
+    "cliBuildIncludeNodeModules": false
+  },
+  "smartContainerTarget": "",
+  "type": "isomorphic-lib",
+  "version": "v3",
+  "additionalNpmNames": ["firedev-modal"],
+  "scripts": {},
+  "license": "MIT",
+  "private": false,
+  "workerPlugins": {}
+}
