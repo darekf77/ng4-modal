@@ -29,7 +29,7 @@
     "workerPlugins": {}
   },
   "name": "ng4-modal",
-  "version": "13.1.23",
+  "version": "13.1.24",
   "scripts": {},
   "private": false,
   "dependencies": {
